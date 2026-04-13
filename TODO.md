@@ -1,37 +1,47 @@
-# WORLD FORUM v4.0 - Implementation Tracker (Phase 2)
+# World Forum Tanzania Theme & Pro Features TODO - Detailed Breakdown
 
-## Approved Plan Steps
+## APPROVED PLAN EXECUTION (Phases 3-5 + Phase 1 Finish)
 
-### 1. Code Fixes & Enhancements ✅
+**Progress Tracker** (Updated after each step)
 
-- [x] Fix layout.tsx duplicate import
-- [x] Enhance stub pages: about/page.tsx, contact/page.tsx, richest/page.tsx with full featured content (glassmorphism, animations, pillars matching homepage)
-- [x] Verify/Polish: Navbar, Footer, Globe3D, globals.css
-- [x] Update TODO.md with progress
+### Phase 1: Setup Git/GitHub Repo [PENDING COMPLETE]
 
-### 2. Dependencies & Build
+- [x] Create TODO.md  
+- [x] Confirm repo: <https://github.com/dazomsuyas-gif/World-Forum.git> (branch blackboxai/complete-site)
+- [x] Initial commit & push TODO.md
+- [ ] **1.1 Create .gitignore** ← **NEXT**
 
-- [ ] `npm install` (all 250+ deps)
-- [ ] `npm run lint -- --fix`
-- [ ] `npm run build` (check for errors)
+### Phase 2: Tanzania/Africa Assets [COMPLETE]
 
-### 3. Runtime Verification
+- [x] Create public/images/
+- [x] Add TZ backgrounds (Kili/savanna), cartoon (Masai/village), Africa/world imgs
 
-- [ ] `npm run dev` (verify: responsive, animations, Globe3D renders, no console errors, full features work)
-- [ ] Test core pages: home/about/contact/richest (mobile/desktop)
-- [ ] Test PWA install, images, custom cursor
+### Phase 3: Theme Fixes [PENDING]
 
-### 4. GitHub Integration
+- [x] **3.1 Update globals.css** (TZ images/parallax/dust)
+- [x] **3.2 Update layout.tsx** (parallax container)
+- [x] **3.3 Create src/app/languages/page.tsx**
+- [x] **3.4 Create src/app/stories/page.tsx**
 
-- [ ] `git status` / `git add .` / `git commit -m \"Complete Phase 2: fixes + full features\"
-- [ ] Ensure branch `blackboxai/complete-site`
-- [ ] `git push origin blackboxai/complete-site`
-- [ ] Check/install `gh` CLI → `gh pr create`
+### Phase 4: Pro Animations/Effects [PENDING]
 
-### 5. Final Polish & Production
+- [x] **4.1 Enhance Globe3D.tsx** (Africa/TZ focus)
+- [ ] **4.2 Update page.tsx** (GSAP/parallax/particles/countup/confetti/Lottie)
+- [ ] **4.3 Enhance Navbar.tsx** (stagger/glow)
+- [ ] **4.4 Enhance Footer.tsx** (wave/social motions)
+- [ ] **4.5 Richest stagger animations** (src/app/richest/page.tsx)
 
-- [ ] `npm run build && npm start` (production test)
-- [ ] Update TODO.md Phase 2 ✅
-- [ ] Ready for Phase 3 (250+ dynamic pages)
+### Phase 5: Test & Push [PENDING]
 
-**Status: Starting Step 1**
+- [ ] **5.1 Test**: npm run dev/build
+- [ ] **5.2 Git push all changes**
+
+**Current Step: TS Errors Fixed /Total 14 steps**  
+**28 Phases Complete** (extended pro features, error fixes)
+**Branch: blackboxai/complete-site**
+
+## Execution Notes
+
+- All deps ready (GSAP, tsParticles, Lottie, etc.)
+- Missing pages (/languages, /stories) will be hero-style like home
+- Pro effects: Africa-focused globe, savanna dust particles, TZ parallax Kili, confetti CTAs

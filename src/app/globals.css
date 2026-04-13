@@ -4,12 +4,37 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Bebas+Neue&family=Lora:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+SC:wght@300;400;700&family=Noto+Serif+SC:wght@400;700&display=swap');
 
-/* Custom CSS vars */
+/* Custom CSS vars - TZ Theme Enhanced */
 :root {
     --max-width: 1440px;
     --nav-height: 72px;
     --card-radius: 16px;
     --section-gap: 7rem;
+    --tanzania-savanna: url('/images/tanzania-savanna-bg.svg');
+    --kilimanjaro-hero: url('/images/kilimanjaro-hero.svg');
+    --masai-cartoon: url('/images/masai-cartoon.svg');
+}
+
+.tz-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: var(--kilimanjaro-hero);
+    background-size: cover;
+    background-position: center 30%;
+    background-attachment: fixed;
+    opacity: 0.12;
+    mix-blend-mode: soft-light;
+    z-index: -1;
+    animation: parallax 60s linear infinite;
+    will-change: transform;
+}
+
+.savanna-dust-particle {
+    position: absolute;
+    background: radial-gradient(circle, rgba(201, 168, 76, 0.4) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: safariDust 15s linear infinite;
 }
 
 /* Tailwind Components Layer - Critical Fix */
@@ -74,6 +99,87 @@
     50% {
         transform: translateY(-20px);
     }
+}
+
+@keyframes safariDust {
+
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: translateX(-20px) translateY(20px);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: translateX(20px) translateY(-10px);
+    }
+}
+
+@keyframes safariMarch {
+
+    0%,
+    100% {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateX(10px) rotate(2deg);
+    }
+
+    75% {
+        transform: translateX(-10px) rotate(-2deg);
+    }
+}
+
+@keyframes sunRise {
+    0% {
+        transform: translateY(100px) scale(0.8) opacity: 0;
+    }
+
+    50% {
+        transform: translateY(0) scale(1.1) opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-30px) scale(1) opacity: 0.9;
+    }
+}
+
+.safari-dust {
+    animation: safariDust 6s ease-in-out infinite;
+}
+
+.safari-march {
+    animation: safariMarch 4s ease-in-out infinite;
+}
+
+.sun-rise {
+    animation: sunRise 8s ease-in-out infinite;
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    will-change: transform;
+}
+
+.parallax-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: var(--kilimanjaro-hero);
+    background-size: cover;
+    background-position: center;
+    transform: translateZ(-1px) scale(2);
+    z-index: -1;
 }
 
 @keyframes twinkle {

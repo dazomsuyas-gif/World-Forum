@@ -17,6 +17,15 @@ const config: Config = {
                 midnight: '#070B14',
                 steel: '#1E2A3A',
                 'white-soft': '#F0EDE8',
+                // Tanzania/Africa theme colors
+                'tanzania-green': '#1EB53A',
+                'tanzania-blue': '#000080',
+                'tanzania-yellow': '#FCD116',
+                'savanna-gold': '#FFB347',
+                'earth-brown': '#8B4513',
+                'acacia-brown': '#A0522D',
+                'grass-green': '#228B22',
+                'sky-orange': '#FF8C42',
                 // Language colors
                 'lang-english': '#003087',
                 'lang-chinese': '#DE2910',
@@ -39,6 +48,11 @@ const config: Config = {
                 marketplace: '#e76f51',
             },
             backgroundImage: {
+                'tanzania-savanna': "url('/images/tanzania-savanna-bg.svg')",
+                'kilimanjaro-hero': "url('/images/kilimanjaro-hero.svg')",
+                'masai-pattern': "url('/images/masai-cartoon.svg')",
+                'grad-savanna-dusk': 'radial-gradient(circle at 30% 20%, #FFB347 0%, #FF8C42 50%, #8B4513 100%)',
+                'grad-earth-tones': 'linear-gradient(135deg, #228B22 0%, #8B4513 50%, #FFB347 100%)',
                 'grad-hero': 'linear-gradient(135deg, #0A1628 0%, #1a237e 50%, #0A1628 100%)',
                 'grad-gold': 'linear-gradient(135deg, #C9A84C, #FFD700, #C9A84C)',
                 'grad-fire': 'linear-gradient(135deg, #E63946, #ff6b35, #ffd700)',
@@ -70,6 +84,8 @@ const config: Config = {
                 'glow-pulse': 'glowPulse 2.5s ease-in-out infinite',
                 'horror-flicker': 'horrorFlicker 4s infinite',
                 'heart-beat': 'heartBeat 1.5s ease-in-out infinite',
+                'safari-march': 'safariMarch 4s ease-in-out infinite',
+                'sun-rise': 'sunRise 8s ease-in-out infinite',
             },
             keyframes: {
                 'gradientMorph': {
@@ -80,10 +96,20 @@ const config: Config = {
                     '0%, 100%': { transform: 'translateY(0px)' },
                     '50%': { transform: 'translateY(-20px)' },
                 },
-                // Add all keyframes from prompt (shimmerText, glowPulse, etc.)
+                'safariMarch': {
+                    '0%, 100%': { transform: 'translateX(0) rotate(0deg)' },
+                    '25%': { transform: 'translateX(10px) rotate(2deg)' },
+                    '75%': { transform: 'translateX(-10px) rotate(-2deg)' },
+                },
+                'sunRise': {
+                    '0%': { transform: 'translateY(100px) opacity: 0' },
+                    '50%': { transform: 'translateY(0) opacity: 1' },
+                    '100%': { transform: 'translateY(-50px) opacity: 0.8' },
+                },
             },
         },
     },
+
     plugins: [],
 }
 

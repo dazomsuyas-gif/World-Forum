@@ -5,7 +5,14 @@ import Footer from '@/components/layout/Footer'
 
 export default function Home() {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-navy via-steel to-midnight">
+        <div className="relative min-h-screen bg-gradient-to-b from-tanzania-savanna/70 via-savanna-gold/20 to-earth-brown/30 overflow-hidden">
+            {/* Parallax Kili overlay */}
+            <div className="absolute inset-0 bg-kilimanjar o-hero opacity-50 mix-blend-overlay parallax" style={{ backgroundSize: 'cover', backgroundPosition: 'center 20%' }} />
+            {/* Dust particles */}
+            <div className="absolute inset-0 animate-safari-dust pointer-events-none">
+                <div className="float w-2 h-2 bg-savanna-gold/40 rounded-full absolute top-20 left-10 animate-twinkle" />
+                <div className="float w-1 h-1 bg-earth-brown/60 absolute top-40 right-20 animate-float delay-1000" />
+            </div>
             {/* Hero Section */}
             <section className="relative h-screen flex items-center justify-center overflow-hidden">
                 <motion.div

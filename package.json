@@ -1,60 +1,6 @@
-{
-    "name": "world-forum",
-    "version": "4.0.0",
-    "private": true,
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "lint": "next lint",
-        "seed": "tsx scripts/seed.ts"
-    },
-    "dependencies": {
-        "next": "14.2.0",
-        "react": "^18",
-        "react-dom": "^18",
-        "@types/node": "^20",
-        "@types/react": "^18",
-        "@types/react-dom": "^18",
-        "eslint": "^8",
-        "eslint-config-next": "14.2.0",
-        "tailwindcss": "^3.4.0",
-        "autoprefixer": "^10.0.1",
-        "postcss": "^8",
-        "typescript": "^5",
-        "framer-motion": "^11.0.0",
-        "gsap": "^3.12.0",
-        "@gsap/react": "^2.1.0",
-        "lottie-react": "^2.4.0",
-        "@tsparticles/react": "^3.0.0",
-        "tsparticles": "^3.0.0",
-        "three": "^0.160.0",
-        "@react-three/fiber": "^8.15.0",
-        "@react-three/drei": "^9.96.0",
-        "canvas-confetti": "^1.9.0",
-        "typed.js": "^2.1.0",
-        "react-countup": "^6.5.0",
-        "react-tilt": "^1.0.2",
-        "react-parallax": "^3.5.1",
-        "react-spring": "^9.7.0",
-        "mongoose": "^8.3.0",
-        "redis": "^4.6.0",
-        "next-auth": "^4.24.0",
-        "bcryptjs": "^2.4.3",
-        "speakeasy": "^2.0.0",
-        "qrcode": "^1.5.3",
-        "@tiptap/react": "^2.3.0",
-        "@tiptap/starter-kit": "^2.3.0",
-        "@tiptap/extension-image": "^2.3.0",
-        "stripe": "^14.0.0",
-        "@stripe/stripe-js": "^3.0.0",
-        "socket.io": "^4.7.0",
-        "socket.io-client": "^4.7.0",
-        "zod": "^3.22.0",
-        "next-pwa": "^5.6.0"
-    },
-    "devDependencies": {
-        "@types/bcryptjs": "^2.4.6",
-        "tsx": "^4.7.0"
-    }
-}
+@echo off
+npm config set registry https: //registry.npmjs.org/
+npm install --save-dev @types/three @types/react @types/react-dom typescript @types/node
+npm run build
+echo Types installed. Run 'npm run dev' next.
+pause

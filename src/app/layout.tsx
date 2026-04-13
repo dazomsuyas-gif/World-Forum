@@ -15,11 +15,18 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="en">
-            <body className="font-ui antialiased bg-gradient-to-br from-navy via-steel/50 to-midnight">
+        <html lang="en" className="!scroll-smooth">
+            <body className="font-ui antialiased min-h-screen relative overflow-x-hidden">
+                <div className="fixed inset-0 bg-gradient-to-br from-savanna-gold/10 via-transparent to-earth-brown/20" />
+                <div className="savanna-dust-particle w-4 h-4 top-20 left-20" style={{ animationDelay: '0s' }} />
+                <div className="savanna-dust-particle w-3 h-3 top-60 right-32" style={{ animationDelay: '5s' }} />
+                <div className="savanna-dust-particle w-2 h-2 bottom-40 left-80" style={{ animationDelay: '10s' }} />
                 <Navbar />
-                <main className="relative z-10 pt-[var(--nav-height)]">
-                    {children}
+                <main className="relative z-10 pt-[var(--nav-height)] parallax-container">
+                    <div className="tz-hero-overlay" />
+                    <div className="relative z-10">
+                        {children}
+                    </div>
                 </main>
                 <Globe3D />
                 <Footer />
