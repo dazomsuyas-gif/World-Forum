@@ -17,7 +17,6 @@
         "react-countup": "^6.4.2",
         "canvas-confetti": "^1.9.3",
         "lucide-react": "^0.394.0",
-        "@lottiefiles/react-lottie-player": "^1.1.1",
         "tsparticles": "^3.0.0",
         "react-tsparticles": "^2.12.2"
     },

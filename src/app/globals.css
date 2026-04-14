@@ -294,6 +294,10 @@
     border-radius: var(--card-radius, 16px);
 }
 
+.shimmer {
+    @apply animate-shimmer;
+}
+
 /* Responsive utilities */
 @media (max-width: 768px) {
     .shimmer {
