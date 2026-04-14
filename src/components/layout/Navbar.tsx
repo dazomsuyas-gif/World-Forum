@@ -32,6 +32,13 @@ export default function Navbar() {
                         💰 Richest
                     </motion.a>
                     <motion.a
+                        href="/knowledge"
+                        className="font-ui text-lg hover:text-gold glow-pulse transition-all duration-300"
+                        initial={{ y: 20, opacity: 0 }}
+                    >
+                        📚 Knowledge
+                    </motion.a>
+                    <motion.a
                         href="/languages"
                         className="font-ui text-lg hover:text-gold glow-pulse transition-all duration-300"
                         initial={{ y: 20, opacity: 0 }}
@@ -58,6 +65,20 @@ export default function Navbar() {
                         initial={{ y: 20, opacity: 0 }}
                     >
                         🛒 Marketplace
+                    </motion.a>
+                    <motion.a
+                        href="/about"
+                        className="font-ui text-lg hover:text-gold glow-pulse transition-all duration-300"
+                        initial={{ y: 20, opacity: 0 }}
+                    >
+                        ℹ️ About
+                    </motion.a>
+                    <motion.a
+                        href="/contact"
+                        className="font-ui text-lg hover:text-gold glow-pulse transition-all duration-300"
+                        initial={{ y: 20, opacity: 0 }}
+                    >
+                        ✉️ Contact
                     </motion.a>
                     <motion.a
                         href="/why-choose-us"

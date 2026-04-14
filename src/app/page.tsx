@@ -132,29 +132,29 @@ export default function Home() {
                         8 World-Class Pillars
                     </motion.h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {[
-                            { icon: '📚', title: 'Knowledge Hub', desc: '250+ articles across 14 categories', color: 'science', href: '/knowledge' },
-                            { icon: '💰', title: 'Richest People', desc: 'Live billionaire rankings & profiles', color: 'richest', href: '/richest' },
-                            { icon: '🗣️', title: 'Language Academy', desc: 'Learn 50+ languages with AI tutors', color: 'lang-english', href: '/languages' },
-                            { icon: '📖', title: 'Stories Network', desc: 'Horror, romance, sci-fi epics', color: 'stories', href: '/stories' },
-                            { icon: '👥', title: 'Global Community', desc: 'Connect with 100k+ members', color: 'community', href: '/community' },
-                            { icon: '🛒', title: 'Digital Marketplace', desc: 'Books, courses, exclusive content', color: 'marketplace', href: '/marketplace' },
-                            { icon: '🔬', title: 'Science & Nature', desc: 'Breakthroughs, discoveries, ecology', color: 'science', href: '/science' },
-                            { icon: '🏛️', title: 'Empires & Wars', desc: 'History, strategy, ancient civilizations', color: 'empires', href: '/history' }
+                        [
+                        {icon: '📚', title: 'Knowledge Hub', desc: '250+ articles across 14 categories', color: 'science', href: '/knowledge' },
+                        {icon: '💰', title: 'Richest People', desc: 'Live billionaire rankings & profiles', color: 'richest', href: '/richest' },
+                        {icon: '🗣️', title: 'Language Academy', desc: 'Learn 50+ languages with AI tutors', color: 'lang-english', href: '/languages' },
+                        {icon: '📖', title: 'Stories Network', desc: 'Horror, romance, sci-fi epics', color: 'stories', href: '/stories' },
+                        {icon: '👥', title: 'Global Community', desc: 'Connect with 100k+ members', color: 'community', href: '/community' },
+                        {icon: '🛒', title: 'Digital Marketplace', desc: 'Books, courses, exclusive content', color: 'marketplace', href: '/marketplace' },
+                        {icon: '🔬', title: 'Science & Nature', desc: 'Breakthroughs, discoveries, ecology', color: 'science', href: '/science' },
+                        {icon: '🏛️', title: 'Empires & Wars', desc: 'History, strategy, ancient civilizations', color: 'empires', href: '/history' }
                         ].map((pillar, i) => (
-                            <motion.div
-                                key={pillar.title}
-                                initial={{ opacity: 0, y: 50 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.1 * i }}
-                                whileHover={{ y: -12, scale: 1.02 }}
-                                className={`glass p-8 rounded-3xl group cursor-pointer hover:shadow-2xl hover:shadow-${pillar.color} transition-all duration-500 border border-${pillar.color}/20 hover:border-${pillar.color}/40`}
-                            >
-                                <div className={`text-5xl mb-6 group-hover:scale-110 transition-transform`}>{pillar.icon}</div>
-                                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-navy group-hover:text-gold line-clamp-2">{pillar.title}</h3>
-                                <p className="opacity-80 text-steel font-ui leading-relaxed">{pillar.desc}</p>
-                                <a href={pillar.href} className="mt-6 inline-block text-gold hover:text-gold-bright font-bold text-sm opacity-0 group-hover:opacity-100 transition-all duration-300">Explore →</a>
-                            </motion.div>
+                        <motion.div
+                            key={pillar.title}
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.1 * i }}
+                            whileHover={{ y: -12, scale: 1.02 }}
+                            className={`glass p-8 rounded-3xl group cursor-pointer hover:shadow-2xl hover:shadow-${pillar.color} transition-all duration-500 border border-${pillar.color}/20 hover:border-${pillar.color}/40`}
+                        >
+                            <div className={`text-5xl mb-6 group-hover:scale-110 transition-transform`}>{pillar.icon}</div>
+                            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-navy group-hover:text-gold line-clamp-2">{pillar.title}</h3>
+                            <p className="opacity-80 text-steel font-ui leading-relaxed">{pillar.desc}</p>
+                            <a href={pillar.href} className="mt-6 inline-block text-gold hover:text-gold-bright font-bold text-sm opacity-0 group-hover:opacity-100 transition-all duration-300">Explore →</a>
+                        </motion.div>
                         ))}
                     </div>
                 </div>
