@@ -1,13 +1,66 @@
+"use client"
+
+import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
+import { CountUp } from 'react-countup'
+import gsap from 'gsap'
 import Globe3D from '@/components/effects/Globe3D'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import confetti from 'canvas-confetti'
 
 export default function Home() {
+    const statsRef = useRef(null)
+    const parallaxRef = useRef(null)
+
+    useEffect(() => {
+        // GSAP parallax
+        gsap.to(parallaxRef.current, {
+            yPercent: -50,
+            ease: "none",
+            scrollTrigger: {
+                trigger: parallaxRef.current,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true
+            }
+        })
+
+        // Countup trigger
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    gsap.from(entry.target.querySelectorAll('.count-num'), {
+                        textContent: 0,
+                        duration: 2.5,
+                        ease: "power2.out",
+                        snap: { textContent: 1 },
+                        stagger: 0.3
+                    })
+                }
+            })
+        })
+        if (statsRef.current) observer.observe(statsRef.current)
+
+        // Confetti on CTA hover (mock)
+        const cta = document.querySelector('.confetti-cta')
+        if (cta) {
+            cta.addEventListener('mouseenter', () => {
+                confetti({
+                    particleCount: 50,
+                    spread: 70,
+                    origin: { y: 0.8 }
+                })
+            })
+        }
+
+        return () => observer.disconnect()
+    }, [])
+
     return (
         <div className="relative min-h-screen bg-gradient-to-b from-tanzania-savanna/70 via-savanna-gold/20 to-earth-brown/30 overflow-hidden">
             {/* Parallax Kili overlay */}
-            <div className="absolute inset-0 bg-kilimanjar o-hero opacity-50 mix-blend-overlay parallax" style={{ backgroundSize: 'cover', backgroundPosition: 'center 20%' }} />
+            <div ref={parallaxRef} className="absolute inset-0 bg-kilimanjar o-hero opacity-50 mix-blend-overlay parallax" style={{ backgroundSize: 'cover', backgroundPosition: 'center 20%' }} />
             {/* Dust particles */}
             <div className="absolute inset-0 animate-safari-dust pointer-events-none">
                 <div className="float w-2 h-2 bg-savanna-gold/40 rounded-full absolute top-20 left-10 animate-twinkle" />
@@ -107,17 +160,17 @@ export default function Home() {
                 </div>
 
                 {/* Stats Row */}
-                <motion.div className="flex flex-col md:flex-row gap-12 justify-center items-center mt-24 mb-16" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}>
+                <motion.div ref={statsRef} className="flex flex-col md:flex-row gap-12 justify-center items-center mt-24 mb-16 countup-stats" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
                     <div className="text-center">
-                        <div className="text-5xl font-hero mb-2 shimmer">250+</div>
+                        <div className="text-5xl font-hero mb-2 shimmer count-num" data-target="250">+</div>
                         <p className="opacity-75 font-ui">Articles</p>
                     </div>
                     <div className="text-center">
-                        <div className="text-5xl font-hero mb-2 shimmer">50+</div>
+                        <div className="text-5xl font-hero mb-2 shimmer count-num" data-target="50">+</div>
                         <p className="opacity-75 font-ui">Languages</p>
                     </div>
                     <div className="text-center">
-                        <div className="text-5xl font-hero mb-2 shimmer">14</div>
+                        <div className="text-5xl font-hero mb-2 shimmer count-num" data-target="14"></div>
                         <p className="opacity-75 font-ui">Categories</p>
                     </div>
                 </motion.div>
@@ -132,7 +185,7 @@ export default function Home() {
                     <h2 className="text-4xl md:text-5xl font-hero mb-6 bg-gradient-to-r from-gold to-gold-bright bg-clip-text text-transparent">Ready to Explore?</h2>
                     <p className="text-xl opacity-90 mb-8 font-display">Join 100k+ global thinkers discovering the world together</p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="/signup" className="btn-primary text-lg px-12 py-4 glow-pulse">🚀 Get Started Free</a>
+                        <a href="/signup" className="btn-primary text-lg px-12 py-4 glow-pulse confetti-cta">🚀 Get Started Free</a>
                         <a href="/why-choose-us" className="btn-secondary text-lg px-12 py-4">⭐ Why World Forum</a>
                     </div>
                 </motion.div>
