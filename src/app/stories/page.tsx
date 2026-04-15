@@ -164,61 +164,61 @@ export default function StoriesPage() {
                                 <p className="flex items-center gap-2 text-sm text-slate-500 mb-4 dark:text-slate-400 overflow-hidden text-ellipsis whitespace-nowrap">
                                     by <span className="font-semibold text-slate-900 dark:text-white">{story.author}</span>
                                 </p>
-                                <p className="text-slate-600 dark:text-slate-300 text-sm mb-6 overflow-hidden h-[3.75rem] text-ellipsis leading-5 line-clamp-3">
-                                    {story.excerpt}
-                                </p>
-                                <div className="flex items-center justify-between">
-                                    <div className="flex items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
-                                        <span className="flex items-center gap-1">
-                                            <Eye className="h-4 w-4" /> {story.reads.toLocaleString()}
-                                        </span>
-                                        <span className="flex items-center gap-1">
-                                            <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" /> {story.likes}
-                                        </span>
-                                    </div>
-                                    <Link
-                                        href="/stories/"
-                                        className="inline-flex items-center gap-1 text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300 font-medium px-4 py-2 rounded-lg hover:bg-indigo-50 dark:hover:bg-indigo-950/50 transition-colors"
-                                    >
-                                        Read Story
-                                    </Link>
+                                className="text-slate-600 dark:text-slate-300 text-sm mb-6 overflow-hidden h-[4.5rem] text-ellipsis leading-6 [display:-webkit-box] [-webkit-line-clamp:3] [-webkit-box-orient:vertical]"
+                                {story.excerpt}
+                            </p>
+                            <div className="flex items-center justify-between">
+                                <div className="flex items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
+                                    <span className="flex items-center gap-1">
+                                        <Eye className="h-4 w-4" /> {story.reads.toLocaleString()}
+                                    </span>
+                                    <span className="flex items-center gap-1">
+                                        <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" /> {story.likes}
+                                    </span>
                                 </div>
+                                <Link
+                                    href="/stories/"
+                                    className="inline-flex items-center gap-1 text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300 font-medium px-4 py-2 rounded-lg hover:bg-indigo-50 dark:hover:bg-indigo-950/50 transition-colors"
+                                >
+                                    Read Story
+                                </Link>
                             </div>
                         </div>
-                    ))}
-                </div>
-            </section>
-
-            {/* CTA Section */}
-            <section id="write-story" className="container mx-auto px-4 py-32 text-center">
-                <div className="mx-auto max-w-4xl rounded-2xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-2xl overflow-hidden">
-                    <div className="py-20 px-8">
-                        <BookOpen className="mx-auto h-24 w-24 mb-8 opacity-75" />
-                        <h2 className="mb-6 text-4xl md:text-5xl font-bold">
-                            Ready to Share Your Story?
-                        </h2>
-                        <p className="mx-auto mb-12 max-w-2xl text-xl opacity-90">
-                            Join thousands of storytellers. Your words could inspire the next language learner's journey.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link
-                                href="/stories/write"
-                                className="bg-white text-indigo-600 hover:bg-slate-100 shadow-xl text-lg px-12 py-8 font-semibold tracking-wide rounded-xl transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]"
-                            >
-                                Start Writing
-                            </Link>
-                            <Link
-                                href="#explore"
-                                className="inline-flex items-center gap-2 border-2 border-white/50 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-semibold text-lg px-12 py-8 rounded-xl transition-all duration-300 hover:border-white/80 hover:scale-[1.02]"
-                            >
-                                Browse Network
-                                <Users className="h-5 w-5" />
-                            </Link>
                         </div>
+                    ))}
+        </div>
+            </section >
+
+        {/* CTA Section */ }
+        < section id = "write-story" className = "container mx-auto px-4 py-32 text-center" >
+            <div className="mx-auto max-w-4xl rounded-2xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-2xl overflow-hidden">
+                <div className="py-20 px-8">
+                    <BookOpen className="mx-auto h-24 w-24 mb-8 opacity-75" />
+                    <h2 className="mb-6 text-4xl md:text-5xl font-bold">
+                        Ready to Share Your Story?
+                    </h2>
+                    <p className="mx-auto mb-12 max-w-2xl text-xl opacity-90">
+                        Join thousands of storytellers. Your words could inspire the next language learner's journey.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <Link
+                            href="/stories/write"
+                            className="bg-white text-indigo-600 hover:bg-slate-100 shadow-xl text-lg px-12 py-8 font-semibold tracking-wide rounded-xl transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]"
+                        >
+                            Start Writing
+                        </Link>
+                        <Link
+                            href="#explore"
+                            className="inline-flex items-center gap-2 border-2 border-white/50 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-semibold text-lg px-12 py-8 rounded-xl transition-all duration-300 hover:border-white/80 hover:scale-[1.02]"
+                        >
+                            Browse Network
+                            <Users className="h-5 w-5" />
+                        </Link>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+            </section >
+        </div >
     );
 }
 
